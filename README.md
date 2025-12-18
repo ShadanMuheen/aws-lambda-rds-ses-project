@@ -42,23 +42,16 @@ Project Folder Structure
 
 AWS-LAMBDA-RDS-SES-PROJECT
 • lambda
-
 lambda_function.py (main Lambda logic)
 
 • sql
-
 creation.sql (table creation scripts)
-
 insertion.sql (sample data insertion)
-
 select.sql (SQL query used for CSV report)
 
 • results
-
 Api_message.png (API Gateway success response)
-
 Lambda_output.png (Lambda execution logs)
-
 Mail.jpeg (email received with CSV attachment)
 
 • README.md
