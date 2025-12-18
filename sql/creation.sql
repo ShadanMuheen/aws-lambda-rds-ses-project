@@ -1,0 +1,25 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE SYS_State (
+  Stt_ID UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  Stt_Name VARCHAR(100),
+  Stt_Code VARCHAR(10)
+);
+
+CREATE TABLE OPT_Party (
+  PTY_ID UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  PTY_FirstName VARCHAR(100),
+  PTY_LastName VARCHAR(100),
+  PTY_Phone VARCHAR(30),
+  PTY_SSN VARCHAR(30)
+);
+
+CREATE TABLE OPT_Address (
+  Add_ID UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  Add_Line1 VARCHAR(200),
+  Add_Line2 VARCHAR(200),
+  Add_City VARCHAR(100),
+  Add_State UUID REFERENCES SYS_State(Stt_ID),
+  Add_Zip VARCHAR(20),
+  Add_PartyID UUID REFERENCES OPT_Party(PTY_ID)
+);
